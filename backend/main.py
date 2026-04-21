@@ -32,6 +32,8 @@ def get_gemini_response(master_profile: str, job_description: str):
         "You are an expert ATS-optimised resume writer. Return a strictly structured "
         "JSON object. CRITICAL: Summary 2 lines max. Skills 4-5 categories max. "
         "Projects 2 max, 2 bullets each (120 chars max). No filler. No markdown."
+        "Certifications 3 max. Achievements 3 max. Focus on relevance to the job description."
+        "use keywords from the job description to tailor the resume content. Avoid generic statements."
     )
 
     config = types.GenerateContentConfig(
@@ -55,6 +57,7 @@ def get_gemini_response(master_profile: str, job_description: str):
           "bullets": ["bullet 1", "bullet 2"]
         }}
       ],
+      "certifications": ["cert 1", "cert 2"],
       "achievements": ["achievement 1", "achievement 2"]
     }}
     """
