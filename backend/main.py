@@ -60,7 +60,7 @@ def get_gemini_response(master_profile: str, job_description: str):
     """
 
     response = client.models.generate_content(
-        model="gemini-2.0-flash", 
+        model="gemini-2.5-flash", 
         contents=user_prompt,
         config=config
     )
